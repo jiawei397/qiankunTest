@@ -6,7 +6,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  publicPath: '/A/',
+  publicPath: '/B/',
   // process.env.NODE_ENV === 'production'
   // ? '/child/'
   // : '/',

@@ -52,7 +52,8 @@ function initApp () {
 }
 
 registerMicroApps([
-  { name: 'child app', entry: '//localhost:9001/child', render, activeRule: genActiveRule('/child') }
+  { name: 'child app', entry: '//localhost:9001/A', render, activeRule: genActiveRule('/A') },
+  { name: 'child2 app', entry: '//localhost:9002/B', render, activeRule: genActiveRule('/B') }
   // { name: 'vue app', entry: { scripts: ['//localhost:7100/main.js'] }, render, activeRule: genActiveRule('/vue') },
 ])
 

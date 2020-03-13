@@ -4,7 +4,8 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/test">Test</router-link> |
-      <router-link to="/child">Child</router-link>
+      <router-link to="/A">Child1</router-link> |
+      <router-link to="/B">Child2</router-link>
       <!--<a href="/demo">demo</a>-->
     </div>
     <div v-show="content" v-html="content">

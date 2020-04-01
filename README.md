@@ -22,7 +22,8 @@ yarn lint
 
 ## 访问地址
 ```
-http://localhost:9001/child/
+http://localhost:9001/A
+http://localhost:9002/B
 http://localhost:9000
 ```
 

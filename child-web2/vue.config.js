@@ -6,7 +6,7 @@ function resolve (dir) {
 }
 
 module.exports = {
-  publicPath: '/B/',
+  publicPath: '/B',
   // process.env.NODE_ENV === 'production'
   // ? '/child/'
   // : '/',
@@ -27,6 +27,9 @@ module.exports = {
     config.output.set('library', packageName + '-[name]')
     config.output.set('libraryTarget', 'umd')
     // config.output.set('publicPath','//localhost:1001');
+    // if (process.env.NODE_ENV === 'production') {
+    //   config.externals(['vue', 'vue-router', 'vuex']);
+    // }
   },
   devServer: {
     inline: false, // 关闭热更新

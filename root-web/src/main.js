@@ -51,11 +51,20 @@ function initApp () {
   render({ appContent: '', loading: true })
 }
 
-registerMicroApps([
-  { name: 'child app', entry: '//localhost:9001/A', render, activeRule: genActiveRule('/A') },
-  { name: 'child2 app', entry: '//localhost:9002/B', render, activeRule: genActiveRule('/B') }
-  // { name: 'vue app', entry: { scripts: ['//localhost:7100/main.js'] }, render, activeRule: genActiveRule('/vue') },
-])
+const isProduction = process.env.NODE_ENV === 'production'
+if (!isProduction) {
+  registerMicroApps([
+    { name: 'child app', entry: '//localhost:9001/A', render, activeRule: genActiveRule('/A') },
+    { name: 'child2 app', entry: '//localhost:9002/B', render, activeRule: genActiveRule('/B') }
+    // { name: 'vue app', entry: { scripts: ['//localhost:7100/main.js'] }, render, activeRule: genActiveRule('/vue') },
+  ])
+} else {
+  registerMicroApps([
+    { name: 'child app', entry: '/A', render, activeRule: genActiveRule('/A') },
+    { name: 'child2 app', entry: '/B', render, activeRule: genActiveRule('/B') }
+    // { name: 'vue app', entry: { scripts: ['//localhost:7100/main.js'] }, render, activeRule: genActiveRule('/vue') },
+  ])
+}
 
 start()
 
